@@ -76,7 +76,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             # Выполняет pull образа с DockerHub
-            sudo docker pull rick33/infr_action:tagname
+            sudo docker pull rick33/infr_action:latest
             #остановка всех контейнеров
             sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 5000:5000 rick33/infr_action:tagname
+            sudo docker run --rm -d -p 5000:5000 rick33/infr_action:latest
